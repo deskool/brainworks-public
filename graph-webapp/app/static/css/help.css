@@ -1,0 +1,118 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* enclosing div */
+#help {
+	display: flex; /* All pages should fit to match this div's height */
+	flex-direction: column;
+	padding: 0.5em;
+	height: 100%;
+}
+
+
+#help h1, h2, h3 {
+	width: max-content;
+}
+#help h1 { /* page title */
+	font-size: 2em;
+	font-weight: bold;
+	margin: 0.5em 0.5em 0em 0.5em;
+}
+#help h2 { /* section headings */
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#help h3 { /* individual instruction headings */
+	font-size: 1.25em;
+  font-weight: bold;
+	margin: 1em 0em 0em 0em;
+}
+
+#help h1 + p {
+	margin: 0em 0em 0.5em 1em;
+	font-style: italic;
+}
+
+/* highlight keywords */
+#help mark {
+	font-weight: bold;
+	background-color: #88ddbb;
+	border-radius: 0.3em;
+	padding: 0.2em 0.2em 0.1em 0.2em;
+}
+
+/* tab buttons */
+#help div.tabs {
+	position: relative;
+	top: 2px;
+	left: 1px
+}
+#help button.tab {
+	background-color: #5cd29d;
+	font-size: 1.2em;
+	font-weight: bold;
+	border: 2px solid black;
+	padding: 0.1em 0.3em;
+	border-radius: 0.5em 0.5em 0em 0em;
+  cursor: pointer;
+}
+#help button.tab:hover {
+	background-color: #99eebb;  /* hover tab */
+}
+#help button.tab.active {
+	background-color: #ccffdd;  /* selected tab */
+	border-bottom: 2px solid #ccffdd;  /* remove bottom border from selected tab */
+}
+
+/* sections pages */
+#help div.page {
+	background-color: #ccffdd;
+	border: 2px solid black;
+	border-radius: 0em 0em 1em 1em;
+	padding: 0em 1em 1em 1em;
+	height: 100%; /* stretch to full height */
+	overflow-y: auto;  /* scroll y if necessary */
+	cursor: default;
+}
+
+/* hide and show images */
+#help div.page img {
+  display: none; /* hide original images within page divs */
+}
+#help div#display img { /* image within display div */
+  position: absolute;
+	border: 2px solid #337733;
+	border-radius: 2em;
+	height: 20em;
+	bottom: 0%;
+}
+#help div#display {
+  position: absolute;
+	z-index: 10;
+	pointer-events: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.2s, opacity 0.2s;
+}
+#help div#display.active {
+	visibility: visible;
+	opacity: 1;
+}

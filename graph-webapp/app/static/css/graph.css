@@ -1,0 +1,272 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* hide scrollbars */
+body {
+    overflow: hidden;
+}
+
+
+/* div used by sigma */
+#sigma-container {
+    max-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* all interface divs */
+div.interface {
+    position: absolute;
+    margin: 1em;
+    display: flex;
+}
+div.interface button {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+div.interface button img {
+    height: 2em;
+    padding: 0.1em;
+}
+div.interface button > span {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+div.interface button:disabled {
+    opacity: 0.3;
+}
+
+div.interface#top-right {
+    right: 0;
+    top: 0;
+}
+div.interface#top-right button {
+    margin-left: 1em;
+}
+div.interface#bottom-right {
+    right: 0;
+    bottom: 0;
+}
+div.interface#bottom-left {
+    left: 0;
+    bottom: 0;
+}
+
+/* error div */
+div#error {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    border: 5px solid black;
+    background-color: #ffaaaa;
+    border-radius: 1em;
+    max-width: 30em;
+}
+div#error p#name {
+    font-size: 2em;
+    font-weight: bold;
+}
+div#error p#message {
+    font-size: 1.2em;
+}
+
+
+/* Search bar */
+#search {
+    position: absolute;
+    right: 0em;
+    top: 3em;
+}
+
+/* Settings Menu */
+#settings-menu {
+    position: absolute;
+    z-index: 10;
+    top: 2.5em;  /* TODO: make this relative to the settings button position */
+    right: 0em;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    padding: 0.5em;
+    box-shadow: 3px 3px 10px black;
+}
+div.setting * {
+    cursor: pointer;
+}
+
+/* Settings tooltip */
+#settings-menu span.tooltip {
+    background-color: #ccffdd;
+    position: absolute;
+    left: -12em;
+    width: max-content;
+    max-width: 10em;
+    display: block;
+    padding: 0.5em;
+    border: 0.3em solid #aaccaa;
+    border-radius: 1em;
+}
+
+/* Tree slider */
+div#tree_slider {
+    position: absolute;
+    right: 0em;
+    top: 5em;
+    margin: 1em;
+}
+div#tree_slider div.slider {
+    position: absolute;
+    right: 0em;
+    height: 20em;
+    margin: 1em 0em 0em 0em;
+}
+div#tree_slider .noUi-pips-vertical {
+    left: -200%;
+}
+
+/* Tree buttons */
+div.interface div#tree {
+    position: absolute;
+    top: 6em;
+    right: 0em;
+}
+div.interface div#tree > span {
+    font-weight: bold;
+    display: block;
+    margin: 0em 0em 0.5em;
+}
+div.interface div#tree button#tree_up {
+    display: block;
+    margin: 0em auto;
+}
+div.interface div#tree button#tree_down {
+    display:block;
+    margin: 0em auto;
+}
+
+/* help button */
+div.interface button#help-button {
+    border-radius: 50%;
+    z-index: 5;
+    margin-left: 1em;
+}
+/* sliding help div */
+div#help-container {
+    background-color: #eeeeee;
+    position: absolute;
+    bottom: -100%;
+    left: 0%;
+	border: 2px solid black;
+    border-radius: 1em;
+    box-sizing: border-box; /* don't include padding in height */
+	margin: 0em 1em;
+    height: 35em; /* fix height so it doesn't change when switching between pages */
+	padding: 0em 0em 5em 0em;  /* leave room for help button */
+    z-index: 4; /* sit behind help button */
+    transition: 0.5s ease;
+}
+div#help-container[class*="expanded"] {
+    bottom: 0%;
+}
+
+/* menu when right-clicking nodes */
+#data-menu {
+    z-index:1000;
+    position: absolute;
+    background-color: white;
+    border: 2px solid black;
+    padding: 0em;
+    box-shadow: 3px 3px 10px black;
+}
+/* menu tab buttons div */
+#data-menu div#tab-buttons {
+   height: 0em;
+   display: flex;
+}
+/* menu tab button */
+#data-menu div#tab-buttons button {
+  background-color: #ccc;
+  border: 2px solid black;
+  border-radius: 5px 5px 0px 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  align-self: flex-end; /* extend upward from #tab-buttons */
+}
+/* menu tab buttons hover */
+#data-menu div#tab-buttons button:hover {
+    background-color: #eee;
+}
+/* the currently selected menu tab button */
+#data-menu div#tab-buttons button.active {
+    background-color: white;
+    border-bottom: 2px solid white;  /* remove bottom border from selected tab button */
+}
+/* padding around the main tab area */
+#data-menu div.tab {
+    padding: 0.5em;
+}
+/* indent every nested object (denoted by a new menu-section) */
+#data-menu div.menu-section div.menu-section {
+    padding: 0em 0em 0em 2em;
+}
+/* bold the key of each key:value pair */
+#data-menu div.menu-section span:first-child {
+    font-weight: bold;
+    padding: 0em 1em 0em 0em;
+}
+
+
+/* div of all sliders */
+#sliders {
+    left: 15px;
+    top: 10px;
+    position: fixed;
+    padding: 0.5em 0.2em;
+}
+/* display title of a slider*/
+#sliders span {
+    display: block;
+}
+/* div containing each individual slider */
+#sliders div.slider {
+    width: 20em;
+    margin: 0.3em 0em 3em;
+}
+/* background of a "filled" slider section */
+#sliders .noUi-connect {
+	background: grey;
+}
+/* hide non-active tooltips */
+.noUi-tooltip {
+    display: none;
+}
+/* show active tooltips */
+.noUi-active .noUi-tooltip {
+    display: block;
+}
+
+

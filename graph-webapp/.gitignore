@@ -1,0 +1,31 @@
+# Mac file system
+.DS_store
+
+# python stuff
+__pycache__
+*.pyc
+
+# pycharm cache
+.idea
+
+# node_modules folder
+node_modules
+
+# python environment
+venv
+
+# local testing flask thingy
+external_test
+run_external_test.py
+
+# log files
+*.log
+# keep empty logs directory
+!logs/
+!logs/.keep
+
+# deploy script
+deploy.sh
+
+
+
