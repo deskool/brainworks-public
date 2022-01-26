@@ -91,6 +91,6 @@ If you use  [BRAINWORKS](http://brainworks.scigami.org), or a part of this repos
   year = {2021},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/deskool/brainworks}}
+  howpublished = {\url{https://github.com/deskool/brainworks-public}}
 }
 ```
