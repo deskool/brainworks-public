@@ -1,0 +1,93 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "key": "node_1",
+        "attributes": {
+          "x": -5,
+          "y": 0,
+          "label": "Node 1",
+          "data": {
+            "some_number": 1,
+            "some_string": "category 1"
+          }
+        }
+      },
+      {
+        "key": "node_2",
+        "attributes": {
+          "x": 0,
+          "y": 7,
+          "label": "Node 2",
+          "data": {
+            "some_number": 2,
+            "some_string": "category 2"
+          }
+        }
+      },
+      {
+        "key": "node_3",
+        "attributes": {
+          "x": 5,
+          "y": 0,
+          "label": "Node 3",
+          "data": {
+            "some_number": 3,
+            "some_string": "category 3"
+          }
+        }
+      }
+  ],
+  "edges": [
+      {
+        "key": "1-2",
+        "source": "node_1",
+        "target": "node_2",
+        "attributes": {
+          "label": "Edge 1 -> 2",
+          "type": "arrow",
+          "data": {
+            "some_number": 1,
+            "some_string": "category 1"
+          }
+        }
+      },
+      {
+        "key": "2-3",
+        "source": "node_2",
+        "target": "node_3",
+        "attributes": {
+          "label": "Edge 2 -> 3",
+          "type": "arrow",
+          "data": {
+            "some_number": 2,
+            "some_string": "category 2"
+          }
+        }
+      },
+      {
+        "key": "3-1",
+        "source": "node_3",
+        "target": "node_1",
+        "attributes": {
+          "label": "Edge 3 -> 1",
+          "type": "arrow",
+          "data": {
+            "some_number": 3,
+            "some_string": "category 3"
+          }
+        }
+      }
+    ]
+  },
+  "config": {
+    "maps": [
+      {"dimension": "node_size", "data": "some_number", "args": {"min": 10, "max": 50}},
+      {"dimension": "node_color", "data": "some_string", "args": {"category 1": "#FF000000", "category 2": "#00FF00", "category 3": "#0000FF"}},
+      {"dimension": "edge_size", "data": "some_number", "args": {"min": 5, "max": 20}},
+      {"dimension": "edge_color", "data": "some_string", "args": {"category 1": "#FFFF00", "category 2": "#00FFFF", "category 3": "#FF00FF"}},
+      {"dimension": "node_slider", "data": "some_number", "args": "Node Number Slider"},
+      {"dimension": "edge_slider", "data": "some_string", "args": "Edge Category Slider"}
+    ]
+  }
+}

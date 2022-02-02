@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h>Graph Index</h>
+
+{% if graphs %}
+<ul>
+{% for ID, graph in graphs.items() %}
+    <li><a href="graph/{{ID}}">{{ID}}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>

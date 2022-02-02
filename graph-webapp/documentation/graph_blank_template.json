@@ -1,0 +1,27 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "key": "",
+        "attributes": {
+          "data": {}
+        }
+      },
+  ],
+  "edges": [
+      {
+        "key": "",
+        "source": "",
+        "target": "",
+        "attributes": {
+          "data": {}
+        }
+      },
+    ]
+  },
+  "config": {
+    "maps": [
+      {"dimension": "", "data": "", "args": {}},
+    ]
+  }
+}

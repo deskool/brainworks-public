@@ -1,0 +1,92 @@
+{% import 'utils.html' as utils %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/">
+    <title>Plot Visualization</title>
+
+    {{ utils.jquery() }}
+    {{ utils.slider() }}
+    {{ utils.serve("graph", development) }}
+
+  </head>
+  <body>
+
+    <div id="sigma-container"></div>
+
+    <div class="interface" id="top-right">
+        <button id="home">
+          <span>
+            <img class="home-label" src="static/icons/home.svg" />
+            Home
+          </span>
+        </button>
+
+        <button id="organize">
+          <span>
+            <img class="organize-label" src="static/icons/organize.svg" />
+            Organize
+          </span>
+        </button>
+
+        <button id="physics">
+          <span>
+            <img class="start-label" src="static/icons/BiPlay.svg" />
+            <img class="stop-label" style="display:none" src="static/icons/BiPause.svg" />
+            Physics
+          </span>
+        </button>
+
+        <button id="settings-menu-button">
+            <span>
+              <img src="static/icons/Settings.svg" />
+            Settings
+            </span>
+        </button>
+        <div id="settings-menu" class="menu" style="display: none"></div>
+
+        <div id="search">
+          <button id="search-type"></button>
+          <input type="search" id="search-input" list="suggestions" />
+          <datalist id="suggestions"></datalist>
+        </div>
+
+        <div id="tree" style="display:none">
+          <span> Cluster Tree </span>
+          <button id="tree_up">
+            <span>
+              <img class="tree_plus_label" src="static/icons/plus.svg" />
+            </span>
+          </button>
+          <button id="tree_down">
+            <span>
+              <img class="tree_minus_label" src="static/icons/minus.svg" />
+            </span>
+          </button>
+        </div>
+      </div>
+
+    <div class="interface" id="bottom-left">
+      <button id="help-button">
+        <img src="static/icons/question.svg"/>
+      </button>
+    </div>
+
+    <div id="sliders"></div>
+
+    <div id="help-container"></div>
+
+    <div id="error">
+        <p id="name"></p>
+        <p id="message"></p>
+    </div>
+
+  </body>
+</html>
+
+
+
+

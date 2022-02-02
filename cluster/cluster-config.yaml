@@ -1,0 +1,50 @@
+Region: us-east-1
+Image:
+  Os: ubuntu2004
+HeadNode:
+  InstanceType: t2.2xlarge
+  Networking:
+    SubnetId: subnet-091e25b8cc00e60ad
+  Ssh:
+    KeyName: nih-ghassemi-key
+Scheduling:
+  Scheduler: slurm
+  SlurmQueues:
+  - Name: q1
+    ComputeResources:
+    - Name: t2xlarge
+      InstanceType: t2.2xlarge
+      MinCount: 0
+      MaxCount: 10
+    Networking:
+      SubnetIds:
+      - subnet-024cb32b6812a116b
+  - Name: q2
+    ComputeResources:
+    - Name: t2xlarge
+      InstanceType: t2.2xlarge
+      MinCount: 0
+      MaxCount: 10
+    Networking:
+      SubnetIds:
+      - subnet-024cb32b6812a116b
+  - Name: q3
+    ComputeResources:
+    - Name: t2xlarge
+      InstanceType: t2.2xlarge
+      MinCount: 0
+      MaxCount: 10
+    Networking:
+      SubnetIds:
+      - subnet-024cb32b6812a116b
+  - Name: q4
+    ComputeResources:
+    - Name: t2xlarge
+      InstanceType: t2.2xlarge
+      MinCount: 0
+      MaxCount: 10
+    Networking:
+      SubnetIds:
+      - subnet-024cb32b6812a116b
+
+

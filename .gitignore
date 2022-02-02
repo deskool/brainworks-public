@@ -1,11 +1,11 @@
 # Ignore all except documentation
-**.py
-**.js
-**.json
-**.ipynb
-**.sh
-**.yaml
-**.html
+#**.py
+#**.js
+#**.json
+#**.ipynb
+#**.sh
+#**.yaml
+#**.html
 
 
 # Databases

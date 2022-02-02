@@ -1,0 +1,71 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "key": "node_1",
+        "attributes": {
+          "x": -5,
+          "y": 0,
+          "size": 10,
+          "label": "Node 1",
+          "color": "#FF0000"
+        }
+      },
+      {
+        "key": "node_2",
+        "attributes": {
+          "x": 0,
+          "y": 7,
+          "size": 20,
+          "label": "Node 2",
+          "color": "#00FF00"
+        }
+      },
+      {
+        "key": "node_3",
+        "attributes": {
+          "x": 5,
+          "y": 0,
+          "size": 30,
+          "label": "Node 3",
+          "color": "#0000FF"
+        }
+      }
+  ],
+  "edges": [
+      {
+        "key": "1-2",
+        "source": "node_1",
+        "target": "node_2",
+        "attributes": {
+          "label": "Edge 1 -> 2",
+          "type": "arrow",
+          "size": 5,
+          "color": "#FFFF00"
+        }
+      },
+      {
+        "key": "2-3",
+        "source": "node_2",
+        "target": "node_3",
+        "attributes": {
+          "label": "Edge 2 -> 3",
+          "type": "arrow",
+          "size": 5,
+          "color": "#00FFFF"
+        }
+      },
+      {
+        "key": "3-1",
+        "source": "node_3",
+        "target": "node_1",
+        "attributes": {
+          "label": "Edge 3 -> 1",
+          "type": "arrow",
+          "size": 5,
+          "color": "#FF00FF"
+        }
+      }
+    ]
+  }
+}

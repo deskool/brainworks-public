@@ -1,0 +1,22 @@
+{
+  "name": "flask_node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "node dependencies for flask app",
+  "main": "graph.js",
+  "scripts": {
+    "build": "bash webpack/run_webpacks.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphology": "^0.23.2",
+    "graphology-layout-forceatlas2": "^0.8.1",
+    "jquery": "^3.6.0",
+    "sigma": "^2.1.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}

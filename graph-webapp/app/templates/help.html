@@ -1,0 +1,67 @@
+{% import 'utils.html' as utils %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/">
+    <title>Tutorial</title>
+
+    {{ utils.jquery() }}
+    {{ utils.serve("help", development) }}
+  </head>
+
+  <body>
+  <div id="help">
+  <div id="display"></div>
+
+  <h1 class="title">Interface Usage</h1>
+  <p>Hover over the eyes to see a demonstration</p>
+  <div class="tabs"></div>
+
+  <div class="page" name="Looking Around">
+    <h3>Moving</h3>
+    <p><mark>Click and drag</mark> an empty space to move the viewing window.<img src="/static/gifs/drag.gif"/></p>
+
+    <h3>Zooming</h3>
+    <p>Use the <mark>scroll wheel</mark> to expand the graph in and out (maintains apparent size). <img src="/static/gifs/zoom_bbox.gif"/></p>
+    <p>While scrolling, hold the <mark>ctrl</mark> key to zoom instead (maintains relative size).<img src="/static/gifs/zoom_sigma.gif"/></p>
+
+    <h3>Searching</h3>
+    <p>Enter text into the <mark>search bar</mark> to highlight all nodes whose <mark>name contains that query.</mark> <img src="/static/gifs/search_partial.gif"/></p>
+    <p>If only one node is found, that node will be brought to the center. <img src="/static/gifs/search_one.gif"/></p>
+    <p>Use the <mark>button to the left</mark> of the search bar to switch between searching for <mark>nodes or edges.</mark> <img src="/static/gifs/search_edge.gif"/></p>
+    <p>To search for <mark>multiple</mark> nodes or edges, enter each name <mark>separated by a comma.</mark> <img src="/static/gifs/search_multiple.gif"/></p>
+    <p>All terms except for the last will require an exact match.</p>
+    <p><mark>Click away</mark> from the search bar to <mark>clear</mark> the current search. <img src="/static/gifs/search_clear.gif"/></p>
+  </div>
+
+  <div class="page" name="Interaction">
+    <h3>Organization</h3>
+    <p><mark>Click and drag a node</mark> to change its position. <img src="/static/gifs/drag_node.gif"/></p>
+    <p>Click the <mark>Organize</mark> button to optimize the arrangement of nodes. <img src="/static/gifs/organize.gif"/></p>
+    <p>Use the <mark>Physics</mark> button to enable and disable a live physics <mark>simulation</mark> of the graph. <img src="/static/gifs/physics.gif"/></p>
+    <p>If node clustering is available, use the <mark>+</mark> and <mark>-</mark> keys to <mark>expand</mark> and <mark>collapse</mark> the clusters. <img src="/static/gifs/cluster.gif"/></p>
+
+    <h3>Node Connections</h3>
+    <p><mark>Left-click a node</mark> to highlight its immediately adjacent <mark>neighbors.</mark> <img src="/static/gifs/select.gif"/></p>
+    <p><mark>Left-click a second node</mark> to highlight the shortest <mark>path</mark> between the two, if one exists. <img src="/static/gifs/shortest_path.gif"/></p>
+
+    <h3>Information</h3>
+    <p><mark>Right-click</mark> a node or edge to view its <mark>data</mark> properties. <img src="/static/gifs/right_click.gif"/></p>
+    <p><mark>Left-click two adjacent nodes</mark> to show the data properties of <mark>all edges</mark> between them. <img src="/static/gifs/multiple_edges.gif"/></p>
+  </div>
+
+  </div>
+  </body>
+</html>
+
+<!--
+  <div class="section">
+    <h2></h2>
+    <h3></h3>
+    <p><img src="/static/gifs/test.gif"/></p>
+    <h3></h3>
+    <p><img src="/static/gifs/test.gif"/></p>
+  </div>
+-->
